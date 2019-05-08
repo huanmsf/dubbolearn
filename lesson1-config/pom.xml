@@ -12,9 +12,11 @@
     <artifactId>lesson1-config</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>lesson1-config-consumer</module>
         <module>lesson1-config-api</module>
-        <module>lesson1-config-provider</module>
+        <module>lesson1-config-1-consumer</module>
+        <module>lesson1-config-1-provider</module>
+        <module>lesson1-config-2-properties-consumer</module>
+        <module>lesson1-config-2-properties-provider</module>
     </modules>
 
     <dependencies>
@@ -22,12 +24,20 @@
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-client -->
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-recipes</artifactId>
-            <version>4.2.0</version>
-        </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-dependencies-zookeeper</artifactId>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-config-spring</artifactId>
+        </dependency>
+
+    </dependencies>
 </project>
