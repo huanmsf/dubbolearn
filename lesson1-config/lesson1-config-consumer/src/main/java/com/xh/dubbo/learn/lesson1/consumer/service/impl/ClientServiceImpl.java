@@ -1,6 +1,7 @@
-package com.xh.dubbo.learn.lesson1.consumer.service;
+package com.xh.dubbo.learn.lesson1.consumer.service.impl;
 
 import com.xh.dubbo.learn.lesson1.api.IEchoService;
+import com.xh.dubbo.learn.lesson1.consumer.service.ClientService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 

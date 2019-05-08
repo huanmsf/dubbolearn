@@ -1,6 +1,7 @@
 package com.xh.dubbo.learn.lesson1.consumer;
 
 import com.xh.dubbo.learn.lesson1.consumer.service.ClientService;
+import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-public class EchoTest {
+public class EchoTestApp {
 
     @Autowired
     private ClientService clientService;
@@ -22,7 +23,7 @@ public class EchoTest {
 
     public static void main(String[] args) {
         System.getProperties().put( "server.port", 7070 );
-        SpringApplication.run(EchoTest.class, args);
+        SpringApplication.run(EchoTestApp.class, args);
     }
 
 
