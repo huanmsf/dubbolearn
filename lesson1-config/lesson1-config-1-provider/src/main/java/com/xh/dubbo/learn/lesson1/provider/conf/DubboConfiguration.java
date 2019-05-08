@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableDubbo(scanBasePackages = "com.xh.dubbo.learn.lesson1.provider.service")
+@EnableDubbo(scanBasePackages = "com.xh.dubbo.learn.lesson1.provider.service.impl")
 public class DubboConfiguration {
     @Bean
     public ApplicationConfig getApplicationConfig() {
@@ -29,7 +29,7 @@ public class DubboConfiguration {
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setProtocol("zookeeper");
-        registryConfig.setAddress("localhost");
+        registryConfig.setAddress("zookeeper://127.0.0.1:2181");
         registryConfig.setPort(2181);
         return registryConfig;
     }

@@ -1,8 +1,7 @@
 package com.xh.dubbo.learn.lesson1.provider.boot;
 
 
-import org.apache.dubbo.config.ApplicationConfig;
-import org.springframework.boot.SpringApplication;
+import com.xh.dubbo.learn.lesson1.provider.conf.DubboConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +19,10 @@ public class ProviderApp {
     }
 
     public static void main(String[] args) throws IOException {
-        SpringApplication.run(ProviderApp.class, args);
+        //SpringApplication.run(ProviderApp.class, args);
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DubboConfiguration.class);
+        context.start();
+        System.in.read();
     }
 }
