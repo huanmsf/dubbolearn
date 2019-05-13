@@ -1,0 +1,18 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="annotation-consumer"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+
+    <dubbo:reference id="echoService" check="false" interface="com.xh.dubbo.learn.lesson2.api.IEchoService">
+        <dubbo:method name="echo" async="true" onreturn="notify.onReturn" onthrow="notify.onThrow"/>
+    </dubbo:reference>
+
+    <bean class="com.xh.dubbo.learn.lesson2.service.ClientService" id="clientService">
+        <property name="echoService" ref="echoService"></property>
+    </bean>
+</beans>

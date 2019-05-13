@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>lesson1-config</module>
+        <module>lesson2-async</module>
     </modules>
 
     <dependencyManagement>
